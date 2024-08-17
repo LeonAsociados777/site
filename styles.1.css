@@ -1,0 +1,241 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI';
+}
+
+/* Estilo del header */
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 100px;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    color: #ffffff;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.container {
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Estilo de la navegación */
+nav ul li {
+    list-style: none;
+    display: inline-grid;
+    padding: 15px 35px;
+    margin: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #ffffff;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    transition: color 0.4s;
+}
+
+nav ul li::after {
+    content: '';
+    background: #ffffff;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    opacity: 0;
+}
+
+nav ul li:hover {
+    color: #069be0;
+}
+
+nav ul li:hover::after {
+    top: 50%;
+    opacity: 1;
+}
+
+/* Estilo general del carrusel de servicios */
+.services-grid {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 60px;
+    background-color: #f4f4f4;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.service-contable, .service-informatico {
+    width: 100%;
+    max-width: 1200px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.service-contable.active, .service-informatico.active {
+    display: flex;
+    opacity: 1;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.gallery-item {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.gallery-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.gallery-item p {
+    font-size: 1em;
+    color: #666;
+}
+
+.gallery-item:hover {
+    transform: translateY(-10px);
+}
+
+/* Botones de navegación del carrusel */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1000;
+}
+
+.next {
+    right: 10px;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev {
+    left: 10px;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+/* Estilo del botón de regresar al inicio */
+.btn-regresar {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.btn-regresar a {
+    display: inline-block;
+    font-size: 1em;
+    background: #156275;
+    padding: 10px 30px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 500;
+    color: #fff;
+    letter-spacing: 2px;
+    transition: 0.2s;
+    border-radius: 5px;
+}
+
+.btn-regresar a:hover {
+    background-color: #0a3e4e;
+}
+
+/* Estilo del footer */
+footer {
+    padding: 20px 0;
+    text-align: center;
+    background-color: #156275;
+    color: white;
+    margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+    .services-grid {
+        padding: 20px;
+    }
+
+    .gallery-item {
+        padding: 15px;
+    }
+
+    .prev, .next {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .btn-regresar a {
+        padding: 8px 20px;
+        font-size: 0.9em;
+    }
+}
+
+/* Asegurar que los enlaces en gallery-item ocupen todo el espacio */
+.gallery-item a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Agrega un efecto hover para que los usuarios sepan que es clickeable */
+.gallery-item a:hover {
+    text-decoration: none;
+    color: inherit;
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+/* Mantener el efecto hover en el contenido de la tarjeta */
+.gallery-item:hover {
+    transform: translateY(-10px);
+    transition: transform 0.3s ease;
+}

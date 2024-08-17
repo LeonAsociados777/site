@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios | Contable e Informático</title>
+    <link rel="stylesheet" href="styles.1.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <!-- Aquí puedes agregar tu menú de navegación -->
+        </nav>
+    </header>
+    <main>
+        <section class="services-grid">
+            <div id="service-contable" class="service-contable active">
+                <h2>Contable</h2>
+                <div class="gallery">
+                    <div class="gallery-item">
+                        <a href="fiscales.html">
+                            <img src="fiscales.jpeg" alt="Fiscales">
+                            <h3>Fiscales</h3>
+                            <p>Asesoramiento y tramitación de impuestos, declaraciones y pagos.</p>
+                        </a>
+                    </div>
+                    <div class="gallery-item">
+                        <a href="contables.html">
+                            <img src="contables.jpeg" alt="Contables">
+                            <h3>Contables</h3>
+                            <p>Elaboración de estados financieros, balances y análisis de resultados.</p>
+                        </a>
+                    </div>
+                    <div class="gallery-item">
+                        <a href="nomina.html">
+                            <img src="nomina.jpg" alt="Nómina">
+                            <h3>Nómina</h3>
+                            <p>Calculo y pago de sueldos, prestaciones y deducciones.</p>
+                        </a>
+                    </div>
+                    <div class="gallery-item">
+                        <a href="pensiones-imss.html">
+                            <img src="pensiones-imss.jpg" alt="Pensiones IMSS">
+                            <h3>Pensiones IMSS</h3>
+                            <p>Asesoramiento y tramitación de pensiones y prestaciones del IMSS.</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        
+            <div id="service-informatico" class="service-informatico">
+                <h2>Informático</h2>
+                <div class="gallery">
+                    <div class="gallery-item">
+                        <a href="soporte-tecnico.html">
+                            <img src="soporte-tecnico.jpg" alt="Soporte Técnico">
+                            <h3>Soporte Técnico</h3>
+                            <p>Asistencia y resolución de problemas técnicos en equipo y software.</p>
+                        </a>
+                    </div>
+                    <div class="gallery-item">
+                        <a href="seguridad-informatica.html">
+                            <img src="seguridad-informatica.jpg" alt="Seguridad Informática">
+                            <h3>Seguridad Informática</h3>
+                            <p>Implementación de medidas de seguridad para proteger su información.</p>
+                        </a>
+                    </div>
+                    <div class="gallery-item">
+                        <a href="consultoria-proyectos.html">
+                            <img src="consultoria-proyectos.jpg" alt="Consultoría y Gestión de Proyectos">
+                            <h3>Consultoría y Gestión de Proyectos</h3>
+                            <p>Análisis y planificación de proyectos informáticos para mejorar la eficiencia.</p>
+                        </a>
+                    </div>
+                    <div class="gallery-item">
+                        <a href="instalacion-configuracion.html">
+                            <img src="instalacion-configuracion.jpg" alt="Instalación y Configuración">
+                            <h3>Instalación y Configuración</h3>
+                            <p>Instalación y configuración de equipo y software para su empresa.</p>
+                        </a>
+                    </div>
+                    <div class="gallery-item">
+                        <a href="redes-perifericos.html">
+                            <img src="redes-perifericos.png" alt="Redes y Periféricos">
+                            <h3>Redes y Periféricos</h3>
+                            <p>Diseño y configuración de redes y periféricos para su empresa.</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Botones de navegación -->
+            <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+            <a class="next" onclick="changeSlide(1)">&#10095;</a>
+        </section>
+        <button class="btn-regresar"><a href="index.html">Regresar al inicio</a></button>
+    </main>
+    <footer>
+        <p>&copy; 2023 Servicios Contable e Informático</p>
+    </footer>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.services-grid > div');
+
+        function changeSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + n + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+    </script>
+</body>
+</html>
